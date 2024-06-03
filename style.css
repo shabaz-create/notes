@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+}
+#navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    height: 50px;
+    color: white
+}
+
+#navbar-links{
+    display:flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin-right: 25px;
+    list-style-type: none;
+}
+
+/* li{
+    list-style-type: none;
+} */
+main{
+    display:flex;
+    justify-content: space-around;
+}
+#notes-container{
+    background-color: rgb(128, 128, 128);
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-top:10px;
+}
+#notes-archive-container{
+    background-color: grey;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-top:10px;
+    display: none;
+    
+}
+#notes-editor-container{
+    width: 50%;
+    border-right: 1px solid black;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#notes-editor{
+    height:25em;
+    width:20em;
+    max-width: 450px;
+    max-height: 500px;
+    background-color: rgb(219, 252, 252);
+    border: 2px solid black;
+    border-radius: 25px;
+    box-shadow:7px 5px 10px;
+}
+
+.item{
+    height:25em;
+    width:20em;
+    max-width: 450px;
+    max-height: 500px;
+    background-color: rgb(219, 252, 252);
+    border: 2px solid black;
+    border-radius: 25px;
+    box-shadow:7px 5px 10px;
+}
+
