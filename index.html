@@ -16,20 +16,22 @@
         </div>
     </nav>
     </header>
-    <main>
-        <div id="notes-editor-container">
+    <main >
+        <div class="container notes-editor-container">
             <form id="notes-editor">
                 <input id="notes-title" placeholder="  Title.." data-key="title">
-                <textarea id="notes" placeholder="Notes.." data-key="content"></textarea>
+                <textarea id="notes-content" placeholder="Notes.." data-key="content"></textarea>
                 <!-- <input class="d-none" type="submit" id="submit"> -->
             </form>
             <button  form="notes-editor" type ="submit"data-key="submit">Submit</button>
-            
+            <br>
+            <div class="pinned-notes">
+                <h1>Pinned Notes:</h1>
+            </div>
         </div>
-        <div  class="notes-container">
-            <div class="item">item</div>
+        <div  class="container notes-container">
         </div>
-        <div class="notes-archive-container d-none"><div class="item">archive</div></div>
+        <div class="container notes-archive-container d-none"></div>
     </main>
 </body>
 <script type="module" src="./index.js"></script>

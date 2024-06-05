@@ -49,12 +49,13 @@ main{
     border-left: 1px solid black;
     
 }
-#notes-editor-container{
+.notes-editor-container{
     width: 50%;
     height: 100vh;
     display:flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 
@@ -69,6 +70,11 @@ main{
     overflow: hidden;
 }
 
+.pinned-notes{
+    border-top:2px solid black;
+    padding-top: 20px
+
+}
 .item{
     height:25em;
     width:20em;
@@ -81,13 +87,27 @@ main{
     padding: 10px;
 }
 
+.item-delete-button-container{
+    display:flex;
+    justify-content: space-between;
+    
+}
+
+.item-extra-buttons-container{
+    display: flex;
+    justify-content: space-between;
+}
+.hidden-buttons{
+    visibility: visible;
+}
+
 #notes-title{
     height: 2em;
     border:none;
     border-bottom:1px solid black;
     width:100%;
 }
-#notes{
+#notes-content{
     height:28em;
     display:flex;
     width: 100%;
