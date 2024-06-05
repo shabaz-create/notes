@@ -6,7 +6,6 @@ let notesTitle=document.querySelector("#notes-title");
 let notes=document.querySelector("#notes-content");
 let main=document.querySelector(".main");
 let pinnedContainer=document.querySelector(".notes-pinned-container");
-console.log(pinnedContainer);
 let notesArray=JSON.parse(localStorage.getItem("notesArray"))||[];
 // let container=document.querySelector(".container");
 renderingNotes(notesArray);
@@ -55,7 +54,8 @@ main.addEventListener("click",(event)=>{
         notesArray=notesArray.filter((element)=>element.id.toString()!=id);
         localStorage.setItem("notesArray",JSON.stringify(notesArray));
     }
-    // console.log(id)
+    // console.log(item)
+    if(item){
     if (key === "archive") {
         notesArray = notesArray.map((element) => {
             if (id == element.id) {
@@ -66,12 +66,15 @@ main.addEventListener("click",(event)=>{
                     isArchived: !element.isArchived,
                     isPinned:element.isPinned
                 };
+            }else{
+                return (element)
+                
             }
         });
         localStorage.setItem("notesArray", JSON.stringify(notesArray));
     }
-
-    if (key === "pinned") {
+}
+    if (key === "pin") {
         notesArray = notesArray.map((element) => {
             if (id == element.id) {
                 return {
@@ -81,6 +84,9 @@ main.addEventListener("click",(event)=>{
                     isArchived: element.isArchived,
                     isPinned:!element.isPinned
                 };
+            }else{
+                    return (element)
+                
             }
         });
         localStorage.setItem("notesArray", JSON.stringify(notesArray));
@@ -92,7 +98,7 @@ main.addEventListener("click",(event)=>{
 function renderingNotes(notes) {
     console.log(notes);
     notesContainer.innerHTML = notes.map(({id, title, content, isArchived,isPinned}) => {
-        if (!isArchived && !isPinned) {
+        if (!isArchived || !isPinned) {
             return `<div class="item" id=${id}>
                         <span class="item-delete-button-container">
                             <h1>${title}</h1>
