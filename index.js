@@ -98,7 +98,7 @@ main.addEventListener("click",(event)=>{
 function renderingNotes(notes) {
     console.log(notes);
     notesContainer.innerHTML = notes.map(({id, title, content, isArchived,isPinned}) => {
-        if (!isArchived || !isPinned) {
+        if (!isArchived && !isPinned) {
             return `<div class="item" id=${id}>
                         <span class="item-delete-button-container">
                             <h1>${title}</h1>
